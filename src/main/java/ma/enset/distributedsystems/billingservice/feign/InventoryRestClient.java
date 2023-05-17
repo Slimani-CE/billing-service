@@ -12,8 +12,8 @@ import javax.swing.*;
 @FeignClient(name = "INVENTORY-SERVICE")
 public interface InventoryRestClient {
     @GetMapping(path = "/products")
-    PagedModel<Product> pageProducts(@RequestParam(value = "page") int page, @RequestParam(value = "size") int size);
+    PagedModel<Product> pageProducts() ;
 
     @GetMapping(path = "/products/{id}")
-    Popup getProductById(@PathVariable Long id);
+    Product getProductById(@PathVariable Long id);
 }
